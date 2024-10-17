@@ -12,6 +12,6 @@
 
 - 介绍博客：
 
-![Qt_Rock.png](./Screenshot/Flutter_get_A.gif)
+![Qt_Rock.png](./Screenshot/Flutter_get_C.gif)
 
 <br />
