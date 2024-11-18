@@ -15,3 +15,39 @@
 ![Qt_Rock.png](./Screenshot/Flutter_get_C.gif)
 
 <br />
+
+
+
+## LoginDemo
+
+用户登陆界面实战，实现一个基本的登录界面。
+
+- 介绍博客：[Flutter插件Get（6）：用户登陆界面实战.md - fengMisaka - 博客园](https://www.cnblogs.com/linuxAndMcu/p/18473680)
+
+![Flutter_Get_I.png](https://s2.loli.net/2024/10/18/x6WLe9d1qnYbVTG.png)
+
+<br />
+
+
+
+## Get_language
+
+Get 插件实现语言的国际化。
+
+- 介绍博客：[Flutter插件Get（7）：实现语言的国际化 - fengMisaka - 博客园](https://www.cnblogs.com/linuxAndMcu/p/18547508)
+
+![Flutter_multiLanguage.gif](https://s2.loli.net/2024/09/26/RaISsn1TpF4YeOA.gif)
+
+<br />
+
+
+
+## CommonFrame-1
+
+Get 插件实现语言的国际化。
+
+- 介绍博客：
+
+![Flutter_frame_A.gif](https://s2.loli.net/2024/11/18/loSJIRPEBfU7Gdp.gif)
+
+<br />
