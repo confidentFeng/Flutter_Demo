@@ -44,10 +44,24 @@ Get 插件实现语言的国际化。
 
 ## CommonFrame-1
 
-Get 插件实现语言的国际化。
+Flutter项目实战（1）：通用项目框架搭建。
 
 - 介绍博客：
 
 ![Flutter_frame_A.gif](https://s2.loli.net/2024/11/18/loSJIRPEBfU7Gdp.gif)
+
+<br />
+
+
+
+### basic_Widgets_demo
+
+Flutter 基础组件示例
+
+- 介绍博客：
+
+<br />
+
+![flutter_basicDemo_B.png](https://s2.loli.net/2024/12/31/2l9jGxEsZSbt6L5.png)
 
 <br />
