@@ -54,7 +54,7 @@ Flutter项目实战（1）：通用项目框架搭建。
 
 
 
-### basic_Widgets_demo
+## basic_Widgets_demo
 
 Flutter 基础组件示例
 
@@ -65,3 +65,18 @@ Flutter 基础组件示例
 ![flutter_basicDemo_B.png](https://s2.loli.net/2024/12/31/2l9jGxEsZSbt6L5.png)
 
 <br />
+
+
+
+## qq_chat
+
+Flutter 基础组件示例
+
+- 介绍博客：
+
+<br />
+
+![Qt_Rock.png](./qq_chat/Screenshot/Flutter_QQ_LoginW_A.gif)
+
+<br />
+
