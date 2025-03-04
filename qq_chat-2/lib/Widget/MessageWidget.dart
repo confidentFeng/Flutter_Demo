@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 状态类
-class ChatState {
+class MessageState {
   final _isHidden = true.obs; // 是否隐藏
   final _width = 250.0.obs; // 宽度
   final _height = 500.0.obs; // 高度
 }
 
 // 控制器类
-class ChatController extends GetxController {
-  final ChatState state = ChatState();
+class MessageController extends GetxController {
+  final MessageState state = MessageState();
 
   double get width => state._width.value;
   set width(double value) => state._width.value = value;
@@ -40,14 +40,14 @@ class ChatController extends GetxController {
 }
 
 // 聊天消息类定义
-class Chat {
+class Message {
   final String id; // 索引id
   final String name; // 联系人名称
   final String lastMessage; // 最近消息
   final String image; // 头像
   final DateTime timestamp; // 时间
 
-  Chat({
+  Message({
     required this.id,
     required this.name,
     required this.lastMessage,
@@ -57,61 +57,61 @@ class Chat {
 }
 
 // 聊天消息数据源
-final List<Chat> chatList = [
-  Chat(
+final List<Message> messageList = [
+  Message(
     id: '1',
     name: '李达',
     lastMessage: '好的，有空再聚',
     image: 'assets/Contact/8.png',
     timestamp: DateTime.now().subtract(Duration(minutes: 10)),
   ),
-  Chat(
+  Message(
     id: '2',
     name: '王虎',
     lastMessage: '拜拜，下次一起玩',
     image: 'assets/Contact/6.png',
     timestamp: DateTime.now().subtract(Duration(hours: 1)),
   ),
-  Chat(
+  Message(
       id: '3',
       name: '明兰',
       lastMessage: '有人在玩吗',
       image: 'assets/Contact/1.png',
       timestamp: DateTime.now().subtract(Duration(hours: 3))),
-  Chat(
+  Message(
       id: '4',
       name: '李思思',
       lastMessage: '没什么想玩的',
       image: 'assets/Contact/3.png',
       timestamp: DateTime.now().subtract(Duration(hours: 5))),
-  Chat(
+  Message(
       id: '5',
       name: '武无敌',
       lastMessage: '拜拜，晚安',
       image: 'assets/Contact/9.png',
       timestamp: DateTime.now().subtract(Duration(hours: 14))),
-  Chat(
+  Message(
     id: '6',
     name: '郑航',
     lastMessage: '芜湖，起飞',
     image: 'assets/Contact/10.png',
     timestamp: DateTime.now().subtract(Duration(days: 1)),
   ),
-  Chat(
+  Message(
     id: '7',
     name: '贺强',
     lastMessage: '有空一起钓鱼啊',
     image: 'assets/Contact/7.png',
     timestamp: DateTime.now().subtract(Duration(days: 2)),
   ),
-  Chat(
+  Message(
     id: '8',
     name: '美琴',
     lastMessage: '嗯嗯，你也晚安',
     image: 'assets/Contact/11.png',
     timestamp: DateTime.now().subtract(Duration(days: 4)),
   ),
-  Chat(
+  Message(
     id: '9',
     name: '静静',
     lastMessage: '六六六',
@@ -121,27 +121,27 @@ final List<Chat> chatList = [
 ];
 
 // 聊天消息界面
-class ChatWidget extends StatefulWidget {
-  const ChatWidget({super.key});
+class MessageWidget extends StatefulWidget {
+  const MessageWidget({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _ContactWidgetState createState() => _ContactWidgetState();
+  _MessageWidgetState createState() => _MessageWidgetState();
 }
 
 // 聊天消息界面
-class _ContactWidgetState extends State<ChatWidget> {
-  final ChatController ctrl = Get.find<ChatController>(); // 聊天消息界面控制器
+class _MessageWidgetState extends State<MessageWidget> {
+  final MessageController ctrl = Get.find<MessageController>(); // 聊天消息界面控制器
 
   // 删除项目的方法
   void _deleteItem(int index) {
     // 下方弹出提示
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('已删除"${chatList[index].name}"的聊天消息')),
+      SnackBar(content: Text('已删除"${messageList[index].name}"的聊天消息')),
     );
 
     setState(() {
-      chatList.removeAt(index); // 从数据源中删除项目
+      messageList.removeAt(index); // 从数据源中删除项目
     });
   }
 
@@ -164,14 +164,14 @@ class _ContactWidgetState extends State<ChatWidget> {
                 borderRadius: BorderRadius.circular(0),
               ),
               child: ListView.builder(
-                itemCount: chatList.length,
+                itemCount: messageList.length,
                 itemBuilder: (context, index) {
-                  final chat = chatList[index];
+                  final message = messageList[index];
                   return HoverListTile(
-                    image: chat.image, // 头像
-                    title: chat.name, // 名称
-                    lastMessage: chat.lastMessage, // 最近聊天消息
-                    timestamp: chat.timestamp, // 时间
+                    image: message.image, // 头像
+                    title: message.name, // 名称
+                    lastMessage: message.lastMessage, // 最近聊天消息
+                    timestamp: message.timestamp, // 时间
                     onDelete: () {
                       // 在这里处理删除逻辑
                       debugPrint('删除项目 $index');

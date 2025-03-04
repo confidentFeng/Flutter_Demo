@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Util/Controller.dart';
 import '../Widget/ContactWidget.dart';
-import '../Widget/ChatWidget.dart';
+import '../Widget/MessageWidget.dart';
 
 // 状态类
 class MainState {
@@ -66,7 +66,7 @@ class MainWidget extends StatelessWidget {
 
   // 各界面对象创建
   final ContactWidget contactWidget = ContactWidget();
-  final ChatWidget chatWidget = ChatWidget();
+  final MessageWidget messageWidget = MessageWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -127,9 +127,8 @@ class MenuBtnList extends StatefulWidget {
 class _MenuBtnListState extends State<MenuBtnList> {
   // 控制器定义
   final MainController loginCtrl = Get.find<MainController>();
-  final ContactController contactCtrl =
-      Get.find<ContactController>(); // 联系人列表界面控制器
-  final ChatController chatCtrl = Get.find<ChatController>(); // 联系人列表界面控制器
+  final ContactController contactCtrl = Get.find<ContactController>();
+  final MessageController messageCtrl = Get.find<MessageController>();
 
   int selectedIndex = 0; // 当前选中的按钮索引，以实现互斥按钮组
 
@@ -138,7 +137,7 @@ class _MenuBtnListState extends State<MenuBtnList> {
     super.initState();
     // 默认选中第一个选项并执行其点击函数
     selectedIndex = 0;
-    chatCtrl.show();
+    messageCtrl.show();
     contactCtrl.hide();
   }
 
@@ -192,7 +191,7 @@ class _MenuBtnListState extends State<MenuBtnList> {
                 selectedIndex = 0;
 
                 // 控制界面显示
-                chatCtrl.show();
+                messageCtrl.show();
                 contactCtrl.hide();
               });
             },
@@ -213,7 +212,7 @@ class _MenuBtnListState extends State<MenuBtnList> {
                 selectedIndex = 1;
 
                 // 控制界面显示
-                chatCtrl.hide();
+                messageCtrl.hide();
                 contactCtrl.show();
               });
             },
@@ -234,7 +233,7 @@ class _MenuBtnListState extends State<MenuBtnList> {
                 selectedIndex = 2;
 
                 // 控制界面显示
-                chatCtrl.hide();
+                messageCtrl.hide();
                 contactCtrl.hide();
               });
             },
@@ -255,7 +254,7 @@ class _MenuBtnListState extends State<MenuBtnList> {
                 selectedIndex = 3;
 
                 // 控制界面显示
-                chatCtrl.hide();
+                messageCtrl.hide();
                 contactCtrl.hide();
               });
             },
@@ -277,7 +276,7 @@ class StackSelWidget extends StatelessWidget {
   final MainController ctrl = Get.find<MainController>();
 
   // 各界面对象创建
-  final ChatWidget chatWidget = ChatWidget();  
+  final MessageWidget messageWidget = MessageWidget();  
   final ContactWidget contactWidget = ContactWidget();
 
   @override
@@ -294,7 +293,7 @@ class StackSelWidget extends StatelessWidget {
         // 重叠存放多个子界面在同一个Stack界面中，根据左边按钮来选择哪个界面显示出来，其它隐藏
         alignment: Alignment.topLeft,
         children: <Widget>[
-          chatWidget, // 聊天消息界面          
+          messageWidget, // 聊天消息界面          
           contactWidget, // 联系人界面
         ],
       ),
